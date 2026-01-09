@@ -16,7 +16,8 @@ import {
   FaIdBadge,
   FaChevronDown,
   FaChevronRight,
-  FaRegQuestionCircle
+  FaRegQuestionCircle,
+  FaDownload
 } from 'react-icons/fa';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useLocation } from 'react-router-dom';
@@ -74,6 +75,7 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
       ]
     },
     { id: 'spins', icon: <FaShoppingCart />, text: 'Spins', path: '/spins' },
+    { id: 'Download Coins', icon: <FaDownload />, text: 'Download Coins', path: '/download' },
     { 
       id: 'Campaigns', 
       icon: <FaRegQuestionCircle />, 

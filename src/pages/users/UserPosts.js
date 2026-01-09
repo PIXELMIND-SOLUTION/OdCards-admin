@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const PAGE_SIZES = [8, 12, 24];
 
@@ -216,6 +216,8 @@ const AdminUserPosts = ({ darkMode }) => {
 const PostCard = ({ post, darkMode, onDelete, deleting }) => {
   const media = post.media?.[0];
 
+  const navigate = useNavigate();
+
   return (
     <div
       className={`relative rounded-xl overflow-hidden shadow transition ${
@@ -242,7 +244,7 @@ const PostCard = ({ post, darkMode, onDelete, deleting }) => {
 
       {/* CONTENT */}
       <div className="p-4 space-y-2">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3" onClick={() => navigate(`/admin/user/post/${post._id}`)}>
           <img
             src={post.userId?.profile?.image || "/assets/images/profile.png"}
             alt="user"

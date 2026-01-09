@@ -29,6 +29,7 @@ import {
   FaFire,
   FaTrophy
 } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { 
   LineChart, 
   Line, 
@@ -50,6 +51,7 @@ const Dashboard = ({ darkMode }) => {
   const [loading, setLoading] = useState(true);
   const [timeRange, setTimeRange] = useState('7days');
   const [postViewType, setPostViewType] = useState('byLikes'); // 'byLikes' or 'byComments'
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchDashboardData();
@@ -639,6 +641,7 @@ const Dashboard = ({ darkMode }) => {
                       <FaImage className="text-xs" />
                     )}
                   </div>
+                  
                 </div>
                 
                 {/* Post Content */}
@@ -710,8 +713,10 @@ const Dashboard = ({ darkMode }) => {
               ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' 
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
             }
-          `}>
-            View All Top Posts
+          `}
+          onClick={() => navigate(`/admin/posts`)}
+          >
+            View All Posts
             <FaArrowUp className="transform rotate-90" />
           </button>
         </div>

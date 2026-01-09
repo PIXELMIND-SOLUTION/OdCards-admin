@@ -30,6 +30,8 @@ import {
     AlertCircle,
     X
 } from 'lucide-react';
+import { FaInfo, FaInfoCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 // Theme context
 const ThemeContext = React.createContext();
@@ -129,7 +131,7 @@ const Posts = ({ darkMode }) => {
 
             // Search in ads if available
             const searchAds = ads.data?.campaigns || [];
-            const filteredAds = searchAds.filter(ad => 
+            const filteredAds = searchAds.filter(ad =>
                 ad.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 ad.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 ad.campaignId?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -447,7 +449,7 @@ const Posts = ({ darkMode }) => {
                                             {isSearching ? 'Searching...' : `${searchResults.length} results`}
                                         </span>
                                     </div>
-                                    
+
                                     {isSearching ? (
                                         <div className="flex items-center justify-center py-8">
                                             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
@@ -474,13 +476,13 @@ const Posts = ({ darkMode }) => {
                                                         </div>
                                                         <div className="flex-1">
                                                             <h4 className="font-medium">
-                                                                {item.type === 'post' 
+                                                                {item.type === 'post'
                                                                     ? item.data.userId?.fullName || 'Unknown User'
                                                                     : item.data.title
                                                                 }
                                                             </h4>
                                                             <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} truncate`}>
-                                                                {item.type === 'post' 
+                                                                {item.type === 'post'
                                                                     ? item.data.description || 'No description'
                                                                     : item.data.description || 'Advertisement'
                                                                 }
@@ -776,7 +778,7 @@ const Posts = ({ darkMode }) => {
                     )}
                 </div>
 
-                {/* Selected Post Modal */}
+                {/* Selected Post Modal
                 {selectedPost && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4">
                         <div
@@ -861,7 +863,7 @@ const Posts = ({ darkMode }) => {
                             </div>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 {/* Footer */}
                 <footer className={`mt-8 py-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'}`}>
@@ -931,6 +933,7 @@ const StatCard = ({ title, value, icon, color, theme, change }) => {
 const ContentCard = ({ item, theme, getTimeAgo, onAction, onSelect, compact }) => {
     const isPost = item.type === 'post';
     const data = item.data;
+    const navigate = useNavigate();
 
     return (
         <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
@@ -961,12 +964,12 @@ const ContentCard = ({ item, theme, getTimeAgo, onAction, onSelect, compact }) =
                         </div>
                     </div>
 
-                    <button
-                        onClick={() => onSelect(item)}
+                    {/* <button
+                        onClick={() => navigate(`/admin/user/post/${data._id}`)}
                         className={`flex-shrink-0 p-1 md:p-2 rounded-lg ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
                     >
-                        <MoreVertical size={compact ? 16 : 20} />
-                    </button>
+                        <FaInfoCircle size={compact ? 16 : 20} />
+                    </button> */}
                 </div>
 
                 {/* Type Badge */}
@@ -1066,7 +1069,7 @@ const ContentCard = ({ item, theme, getTimeAgo, onAction, onSelect, compact }) =
             <div className={`p-3 md:p-4 border-t ${theme === 'dark' ? 'border-gray-700 bg-gray-900/50' : 'border-gray-200 bg-gray-50'}`}>
                 <div className="flex gap-2">
                     <button
-                        onClick={() => onSelect(item)}
+                        onClick={() => navigate(`/admin/user/post/${data._id}`)}
                         className={`flex-1 py-2 rounded-lg text-center text-sm ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}
                     >
                         Details
