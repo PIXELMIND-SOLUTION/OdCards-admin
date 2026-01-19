@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import UserList from '../Views/users/UserList';
-import Categories from '../Views/category/Categories';
 import Dashboard from '../Views/Dashboard';
-import SingleUser from '../Views/users/SingleUser';
-import EditUser from '../Views/users/EditUser';
-import CreateHouse from '../Views/houses/CreateHouse';
-import AllHouses from '../Views/houses/AllHouses';
-import Plans from '../Views/plans/Plans';
+import Customers from '../Views/customers/Customers';
+import VisitingCardList from '../Views/cards/VisitingCardList';
+import AllOrders from '../Views/orders/AllOrders';
+import Reviews from '../Views/reviews/Reviews';
+import Settings from '../Views/Settings';
+import ContactUs from '../Views/contactus/ContactUs';
+import Scroller from '../Views/scroller/Scroller';
+import Faqs from '../Views/faqs/Faqs';
+import Banners from '../Views/banners/Banners';
+import AboutUs from '../Views/aboutus/AboutUs';
+import UserProducts from '../Views/UserProducts/UserProducts';
 
 const AdminPanel = () => {
     const navigate = useNavigate();
@@ -102,17 +106,27 @@ const AdminPanel = () => {
                             <Route path="/" element={<Dashboard darkMode={darkMode} collapsed={collapsed} />} />
                             <Route path="/dashboard" element={<Dashboard darkMode={darkMode} collapsed={collapsed} />} />
 
-                            <Route path="/users" element={<UserList darkMode={darkMode} collapsed={collapsed} />} />
-                            <Route path="/users/:id" element={<SingleUser darkMode={darkMode} collapsed={collapsed} />} />
-                            <Route path="/users/update/:id" element={<EditUser darkMode={darkMode} collapsed={collapsed} />} />
+                            <Route path="/customers" element={<Customers darkMode={darkMode} collapsed={collapsed} />} />
 
-                            <Route path='/create-house/:id' element={<CreateHouse darkMode={darkMode} collapsed={collapsed} />} />
-                            <Route path='/allhouses' element={<AllHouses darkMode={darkMode} collapsed={collapsed} />} />
+                            <Route path="/visiting-cards" element={<VisitingCardList darkMode={darkMode} collapsed={collapsed} />} />
 
+                            <Route path="/user-products" element={<UserProducts darkMode={darkMode} collapsed={collapsed} />} /> 
 
-                            <Route path='/categories' element={<Categories darkMode={darkMode} collapsed={collapsed} />} />
+                            <Route path="/allorders" element={<AllOrders darkMode={darkMode} collapsed={collapsed} />} />  
 
-                            <Route path="/plans" element={<Plans darkMode={darkMode} collapsed={collapsed} />} />
+                            <Route path="/banners" element={<Banners darkMode={darkMode} collapsed={collapsed} />} />
+
+                            <Route path="/reviews" element={<Reviews darkMode={darkMode} collapsed={collapsed} />} />  
+
+                            <Route path="/Contactus" element={<ContactUs darkMode={darkMode} collapsed={collapsed} />} />
+
+                            <Route path="/aboutus" element={<AboutUs darkMode={darkMode} collapsed={collapsed} />} />
+
+                            <Route path="/scrollers" element={<Scroller darkMode={darkMode} collapsed={collapsed} />} />
+
+                            <Route path="/faqs" element={<Faqs darkMode={darkMode} collapsed={collapsed} />} />
+
+                            <Route path="/settings" element={<Settings darkMode={darkMode} collapsed={collapsed} />} />                        
 
                             
                             <Route path="*" element={<Navigate to="/admin" replace />} />

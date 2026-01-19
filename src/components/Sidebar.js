@@ -18,9 +18,16 @@ import {
   FaChevronRight,
   FaRegQuestionCircle,
   FaDownload,
-  FaPlus
+  FaPlus,
+  FaQuestionCircle,
+  FaIdCard,
+  FaScroll,
+  FaStar,
+  FaEnvelopeOpenText,
+  FaInfoCircle
 } from 'react-icons/fa';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { PiFlagBanner } from 'react-icons/pi';
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollapsed, onNavigate }) => {
@@ -62,22 +69,104 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
   };
 
   const menuItems = [
-    { id: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard', path: '/' },
-    { id: 'users', icon: <FaUsers />, text: 'Users', path: '/users' },
-    { id: 'Category', icon: <FaPlus />, text: 'Categories', path: '/categories' },
-    {
-      id: 'AllHouses',
-      icon: <FaHome />,
-      text: 'AllHouses',
-      path: '/allhouses',
-      subItems: [
-        // { id: 'Houses', text: 'Create House', path: '/create-house' },
-        { id: 'All Houses', text: 'All Houses', path: '/allhouses' }
-      ]
-    },
-    // { id: 'plans', icon: <FaFileInvoiceDollar />, text: 'Plans', path: '/plans' },
-    { id: 'Settings', icon: <FaCog />, text: 'Settings', path: '/settings' },
-  ];
+  {
+    id: "dashboard",
+    icon: <FaTachometerAlt />,
+    text: "Dashboard",
+    path: "/"
+  },
+
+  {
+    id: "customers",
+    icon: <FaUsers />,
+    text: "Customers",
+    path: "/customers"
+  },
+
+  {
+    id: "banners",
+    icon: <PiFlagBanner />,
+    text: "Banners",
+    path: "/banners"
+  },
+
+  {
+    id: "cards",
+    icon: <FaIdCard />,
+    text: "Cards",
+    path: "/visiting-cards",
+    subItems: [
+      {
+        id: "visitingCards",
+        icon: <FaIdCard />,
+        text: "Visiting Cards",
+        path: "/visiting-cards"
+      }
+    ]
+  },
+  {
+    id: "userProducts",
+    icon: <FaBox />,
+    text: "User Products",
+    path: "/user-products"
+  },
+  {
+    id: "orders",
+    icon: <FaShoppingCart />,
+    text: "Orders",
+    path: "/allorders",
+    subItems: [
+      {
+        id: "allOrders",
+        icon: <FaShoppingCart />,
+        text: "All Orders",
+        path: "/allorders"
+      }
+    ]
+  },
+
+  {
+    id: "scroller",
+    icon: <FaScroll />,
+    text: "Scroller",
+    path: "/scrollers"
+  },
+
+  {
+    id: "reviews",
+    icon: <FaStar />,
+    text: "Reviews",
+    path: "/reviews"
+  },
+
+  {
+    id: "contactUs",
+    icon: <FaEnvelopeOpenText />,
+    text: "Contact Us",
+    path: "/contactus"
+  },
+
+  {
+    id: "aboutUs",
+    icon: <FaInfoCircle />,
+    text: "About Us",
+    path: "/aboutus"
+  },
+
+  {
+    id: "faqs",
+    icon: <FaQuestionCircle />,
+    text: "FAQs",
+    path: "/faqs"
+  },
+
+  {
+    id: "settings",
+    icon: <FaCog />,
+    text: "Settings",
+    path: "/settings"
+  }
+];
 
   const handleItemClick = (item) => {
     if (item.subItems && !collapsed) {
