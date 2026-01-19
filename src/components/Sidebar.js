@@ -69,104 +69,104 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
   };
 
   const menuItems = [
-  {
-    id: "dashboard",
-    icon: <FaTachometerAlt />,
-    text: "Dashboard",
-    path: "/"
-  },
+    {
+      id: "dashboard",
+      icon: <FaTachometerAlt />,
+      text: "Dashboard",
+      path: "/"
+    },
 
-  {
-    id: "customers",
-    icon: <FaUsers />,
-    text: "Customers",
-    path: "/customers"
-  },
+    {
+      id: "customers",
+      icon: <FaUsers />,
+      text: "Customers",
+      path: "/customers"
+    },
 
-  {
-    id: "banners",
-    icon: <PiFlagBanner />,
-    text: "Banners",
-    path: "/banners"
-  },
+    {
+      id: "banners",
+      icon: <PiFlagBanner />,
+      text: "Banners",
+      path: "/banners"
+    },
 
-  {
-    id: "cards",
-    icon: <FaIdCard />,
-    text: "Cards",
-    path: "/visiting-cards",
-    subItems: [
-      {
-        id: "visitingCards",
-        icon: <FaIdCard />,
-        text: "Visiting Cards",
-        path: "/visiting-cards"
-      }
-    ]
-  },
-  {
-    id: "userProducts",
-    icon: <FaBox />,
-    text: "User Products",
-    path: "/user-products"
-  },
-  {
-    id: "orders",
-    icon: <FaShoppingCart />,
-    text: "Orders",
-    path: "/allorders",
-    subItems: [
-      {
-        id: "allOrders",
-        icon: <FaShoppingCart />,
-        text: "All Orders",
-        path: "/allorders"
-      }
-    ]
-  },
+    {
+      id: "cards",
+      icon: <FaIdCard />,
+      text: "Cards",
+      path: "/visiting-cards",
+      subItems: [
+        {
+          id: "visitingCards",
+          icon: <FaIdCard />,
+          text: "Visiting Cards",
+          path: "/visiting-cards"
+        }
+      ]
+    },
+    {
+      id: "userProducts",
+      icon: <FaBox />,
+      text: "User Products",
+      path: "/user-products"
+    },
+    {
+      id: "orders",
+      icon: <FaShoppingCart />,
+      text: "Orders",
+      path: "/allorders",
+      subItems: [
+        {
+          id: "allOrders",
+          icon: <FaShoppingCart />,
+          text: "All Orders",
+          path: "/allorders"
+        }
+      ]
+    },
 
-  {
-    id: "scroller",
-    icon: <FaScroll />,
-    text: "Scroller",
-    path: "/scrollers"
-  },
+    {
+      id: "scroller",
+      icon: <FaScroll />,
+      text: "Scroller",
+      path: "/scrollers"
+    },
 
-  {
-    id: "reviews",
-    icon: <FaStar />,
-    text: "Reviews",
-    path: "/reviews"
-  },
+    {
+      id: "reviews",
+      icon: <FaStar />,
+      text: "Reviews",
+      path: "/reviews"
+    },
 
-  {
-    id: "contactUs",
-    icon: <FaEnvelopeOpenText />,
-    text: "Contact Us",
-    path: "/contactus"
-  },
+    {
+      id: "contactUs",
+      icon: <FaEnvelopeOpenText />,
+      text: "Contact Us",
+      path: "/contactus"
+    },
 
-  {
-    id: "aboutUs",
-    icon: <FaInfoCircle />,
-    text: "About Us",
-    path: "/aboutus"
-  },
+    {
+      id: "aboutUs",
+      icon: <FaInfoCircle />,
+      text: "About Us",
+      path: "/aboutus"
+    },
 
-  {
-    id: "faqs",
-    icon: <FaQuestionCircle />,
-    text: "FAQs",
-    path: "/faqs"
-  },
+    {
+      id: "faqs",
+      icon: <FaQuestionCircle />,
+      text: "FAQs",
+      path: "/faqs"
+    },
 
-  {
-    id: "settings",
-    icon: <FaCog />,
-    text: "Settings",
-    path: "/settings"
-  }
-];
+    {
+      id: "settings",
+      icon: <FaCog />,
+      text: "Settings",
+      path: "/settings"
+    }
+  ];
 
   const handleItemClick = (item) => {
     if (item.subItems && !collapsed) {
@@ -239,8 +239,12 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
           {/* Logo */}
           {!collapsed ? (
             <div className="flex items-center cursor-pointer" onClick={() => onNavigate('/')}>
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold">A</span>
+              <div className="w-8 h-8  rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+                <img
+                  src="/logo.png"   // or your logo path
+                  alt="Logo"
+                  className="w-8 h-8 object-contain rounded-lg"
+                />
               </div>
               <div>
                 <h1 className="text-xl font-bold">OdCards</h1>
