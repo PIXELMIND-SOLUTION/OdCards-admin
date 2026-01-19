@@ -243,8 +243,8 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
                 <span className="text-white font-bold">A</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold">Admin</h1>
-                <p className="text-xs text-gray-500">v2.0</p>
+                <h1 className="text-xl font-bold">OdCards</h1>
+                <p className="text-xs text-gray-500">Admin Panel</p>
               </div>
             </div>
           ) : (
