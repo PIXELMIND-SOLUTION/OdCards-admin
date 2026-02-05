@@ -27,7 +27,7 @@ import {
   FaInfoCircle
 } from 'react-icons/fa';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { PiFlagBanner } from 'react-icons/pi';
+import { PiCoin, PiFlagBanner } from 'react-icons/pi';
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollapsed, onNavigate }) => {
@@ -88,6 +88,13 @@ const Sidebar = ({ sidebarOpen, darkMode, toggleSidebar, collapsed, toggleCollap
       icon: <PiFlagBanner />,
       text: "Banners",
       path: "/banners"
+    },
+
+    {
+      id: "charges",
+      icon: <PiCoin />,
+      text: "Charges",
+      path: "/charges"
     },
 
     {

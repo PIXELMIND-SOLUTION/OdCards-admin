@@ -14,6 +14,7 @@ import Faqs from '../Views/faqs/Faqs';
 import Banners from '../Views/banners/Banners';
 import AboutUs from '../Views/aboutus/AboutUs';
 import UserProducts from '../Views/UserProducts/UserProducts';
+import AdminCharges from '../Charges/AdminCharges';
 
 const AdminPanel = () => {
     const navigate = useNavigate();
@@ -113,6 +114,8 @@ const AdminPanel = () => {
                             <Route path="/user-products" element={<UserProducts darkMode={darkMode} collapsed={collapsed} />} /> 
 
                             <Route path="/allorders" element={<AllOrders darkMode={darkMode} collapsed={collapsed} />} />  
+
+                            <Route path="/charges" element={<AdminCharges darkMode={darkMode} collapsed={collapsed} />}/>
 
                             <Route path="/banners" element={<Banners darkMode={darkMode} collapsed={collapsed} />} />
 
