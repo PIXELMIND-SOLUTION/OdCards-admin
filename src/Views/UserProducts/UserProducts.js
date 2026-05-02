@@ -43,7 +43,7 @@ import {
 } from 'react-icons/md';
 
 // API endpoints
-const API_BASE_URL = 'http://31.97.206.144:9124/api';
+const API_BASE_URL = 'http://31.97.228.17:9124/api';
 const USER_CARDS_API = `${API_BASE_URL}/user-cards`;
 const SINGLE_CARD_API = (id) => `${API_BASE_URL}/user/card/${id}`;
 

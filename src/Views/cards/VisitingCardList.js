@@ -42,8 +42,8 @@ import {
   MdRefresh
 } from 'react-icons/md';
 
-const API_BASE_URL = 'http://31.97.206.144:9124/api';
-const CATEGORIES_API_URL = 'http://31.97.206.144:9124/api/categories/allcategories';
+const API_BASE_URL = 'http://31.97.228.17:9124/api';
+const CATEGORIES_API_URL = 'http://31.97.228.17:9124/api/categories/allcategories';
 
 const VisitingCardList = ( {darkMode} ) => {
   

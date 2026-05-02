@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Eye, Edit, Trash2, Plus, X, CheckCircle } from "lucide-react";
 
-const API_BASE = "http://31.97.206.144:9124/api/admin";
+const API_BASE = "http://31.97.228.17:9124/api/admin";
 
 const AdminCharges = () => {
   const [charges, setCharges] = useState([]);

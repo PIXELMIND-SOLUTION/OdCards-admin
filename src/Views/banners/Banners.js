@@ -38,7 +38,7 @@ const Banners = ({ darkMode }) => {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/banners/getallbanners"
+        "http://31.97.228.17:9124/api/banners/getallbanners"
       );
       setBanners(res.data?.banners || []);
     } catch {
@@ -51,7 +51,7 @@ const Banners = ({ darkMode }) => {
   const fetchDetails = async (id) => {
     try {
       const res = await axios.get(
-        `http://31.97.206.144:9124/api/banners/banner/${id}`
+        `http://31.97.228.17:9124/api/banners/banner/${id}`
       );
       setSelectedBanner(res.data.banner);
       setShowModal(true);
@@ -94,13 +94,13 @@ const Banners = ({ darkMode }) => {
     try {
       if (editingId) {
         await axios.put(
-          `http://31.97.206.144:9124/api/banners/updatebanner/${editingId}`,
+          `http://31.97.228.17:9124/api/banners/updatebanner/${editingId}`,
           data
         );
         Swal.fire("Updated", "Banner updated", "success");
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/banners/create",
+          "http://31.97.228.17:9124/api/banners/create",
           data
         );
         Swal.fire("Created", "Banner created", "success");
@@ -122,7 +122,7 @@ const Banners = ({ darkMode }) => {
       content: b.content,
       images: [],
       previews: b.images.map(
-        (i) => `http://31.97.206.144:9124/uploads/banners/${i}`
+        (i) => `http://31.97.228.17:9124/uploads/banners/${i}`
       ),
     });
     setEditingId(b._id);
@@ -138,7 +138,7 @@ const Banners = ({ darkMode }) => {
     if (!ok.isConfirmed) return;
 
     await axios.delete(
-      `http://31.97.206.144:9124/api/banners/deletebanner/${id}`
+      `http://31.97.228.17:9124/api/banners/deletebanner/${id}`
     );
     fetchBanners();
     Swal.fire("Deleted", "Banner removed", "success");
@@ -265,7 +265,7 @@ const Banners = ({ darkMode }) => {
               }`}
             >
               <img
-                src={`http://31.97.206.144:9124/uploads/banners/${b.images[0]}`}
+                src={`http://31.97.228.17:9124/uploads/banners/${b.images[0]}`}
                 className="h-48 w-full object-cover"
               />
               <div className="p-4">
@@ -320,7 +320,7 @@ const Banners = ({ darkMode }) => {
               {selectedBanner.images.map((img, i) => (
                 <img
                   key={i}
-                  src={`http://31.97.206.144:9124/uploads/banners/${img}`}
+                  src={`http://31.97.228.17:9124/uploads/banners/${img}`}
                   className="h-40 w-full object-cover rounded-lg"
                 />
               ))}

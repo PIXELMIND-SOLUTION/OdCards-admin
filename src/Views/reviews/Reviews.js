@@ -34,7 +34,7 @@ const Reviews = ( {darkMode} ) => {
   const fetchReviews = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/reviews/allreviews"
+        "http://31.97.228.17:9124/api/reviews/allreviews"
       );
       setReviews(res.data || []);
     } catch (err) {
@@ -76,13 +76,13 @@ const Reviews = ( {darkMode} ) => {
     try {
       if (isEditing) {
         await axios.put(
-          `http://31.97.206.144:9124/api/reviews/updatereview/${currentReviewId}`,
+          `http://31.97.228.17:9124/api/reviews/updatereview/${currentReviewId}`,
           data
         );
         Swal.fire("Updated", "Review updated successfully", "success");
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/reviews/create-review",
+          "http://31.97.228.17:9124/api/reviews/create-review",
           data
         );
         Swal.fire("Created", "Review created successfully", "success");
@@ -119,7 +119,7 @@ const Reviews = ( {darkMode} ) => {
     if (!ok.isConfirmed) return;
 
     await axios.delete(
-      `http://31.97.206.144:9124/api/reviews/deletereview/${id}`
+      `http://31.97.228.17:9124/api/reviews/deletereview/${id}`
     );
     Swal.fire("Deleted", "Review removed", "success");
     fetchReviews();
@@ -243,7 +243,7 @@ const Reviews = ( {darkMode} ) => {
                 >
                   {r.image && (
                     <img
-                      src={`http://31.97.206.144:9124${r.image}`}
+                      src={`http://31.97.228.17:9124${r.image}`}
                       className="w-14 h-14 rounded-full object-cover"
                     />
                   )}

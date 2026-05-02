@@ -85,7 +85,7 @@ const Customers = ({ darkMode }) => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/users/getallusers"
+        "http://31.97.228.17:9124/api/users/getallusers"
       );
       const users = res.data.users || [];
       setCustomers(users);
@@ -95,7 +95,7 @@ const Customers = ({ darkMode }) => {
         users.map(async (user) => {
           try {
             const addressRes = await axios.get(
-              `http://31.97.206.144:9124/api/addresses/${user._id}`
+              `http://31.97.228.17:9124/api/addresses/${user._id}`
             );
             return addressRes.data.length > 0;
           } catch {
@@ -218,12 +218,12 @@ const Customers = ({ darkMode }) => {
   const viewUser = async (id) => {
     try {
       const userRes = await axios.get(
-        `http://31.97.206.144:9124/api/users/user/${id}`
+        `http://31.97.228.17:9124/api/users/user/${id}`
       );
       setSelectedUser(userRes.data.user);
 
       const addressRes = await axios.get(
-        `http://31.97.206.144:9124/api/addresses/${id}`
+        `http://31.97.228.17:9124/api/addresses/${id}`
       );
       setAddresses(addressRes.data || []);
       setShowModal(true);
@@ -264,7 +264,7 @@ const Customers = ({ darkMode }) => {
 
     try {
       await axios.delete(
-        `http://31.97.206.144:9124/api/users/deleteuser/${id}`
+        `http://31.97.228.17:9124/api/users/deleteuser/${id}`
       );
       
       Swal.fire({

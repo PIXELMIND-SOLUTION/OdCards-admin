@@ -8,7 +8,7 @@ import {
   FaSave,
 } from "react-icons/fa";
 
-const API_BASE = "http://31.97.206.144:9124/api/users";
+const API_BASE = "http://31.97.228.17:9124/api/users";
 const PAGE_SIZES = [5, 10, 20, 50];
 
 const badge = (status) => {

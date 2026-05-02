@@ -32,7 +32,7 @@ const ContactUs = ( {darkMode} ) => {
   const fetchContact = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/contactus/get"
+        "http://31.97.228.17:9124/api/contactus/get"
       );
       if (res.data.data?.length) {
         const c = res.data.data[0];
@@ -53,7 +53,7 @@ const ContactUs = ( {darkMode} ) => {
   const fetchSubmissions = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/contactus/submissions"
+        "http://31.97.228.17:9124/api/contactus/submissions"
       );
       setSubmissions(res.data.data || []);
     } catch (err) {
@@ -69,12 +69,12 @@ const ContactUs = ( {darkMode} ) => {
     try {
       if (currentContactId) {
         await axios.put(
-          `http://31.97.206.144:9124/api/contactus/update/${currentContactId}`,
+          `http://31.97.228.17:9124/api/contactus/update/${currentContactId}`,
           contactData
         );
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/contactus/create",
+          "http://31.97.228.17:9124/api/contactus/create",
           contactData
         );
       }
@@ -97,7 +97,7 @@ const ContactUs = ( {darkMode} ) => {
     if (!ok.isConfirmed) return;
 
     await axios.delete(
-      `http://31.97.206.144:9124/api/contactus/submissions/${id}`
+      `http://31.97.228.17:9124/api/contactus/submissions/${id}`
     );
     Swal.fire("Deleted", "Submission removed", "success");
     fetchSubmissions();

@@ -45,7 +45,7 @@ const AboutUs = ( {darkMode} ) => {
   const fetchAboutData = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/aboutus/about"
+        "http://31.97.228.17:9124/api/aboutus/about"
       );
       if (res.data.length) {
         const a = res.data[0];
@@ -64,7 +64,7 @@ const AboutUs = ( {darkMode} ) => {
   const fetchCardData = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/aboutcard/getallcards"
+        "http://31.97.228.17:9124/api/aboutcard/getallcards"
       );
       setCards(res.data);
     } catch (e) {
@@ -86,13 +86,13 @@ const AboutUs = ( {darkMode} ) => {
     try {
       if (isEditingAbout) {
         await axios.put(
-          `http://31.97.206.144:9124/api/aboutus/updateabout/${currentAboutId}`,
+          `http://31.97.228.17:9124/api/aboutus/updateabout/${currentAboutId}`,
           data
         );
         Swal.fire("Success", "About updated", "success");
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/aboutus/create-about",
+          "http://31.97.228.17:9124/api/aboutus/create-about",
           data
         );
         Swal.fire("Success", "About created", "success");
@@ -116,13 +116,13 @@ const AboutUs = ( {darkMode} ) => {
     try {
       if (isEditingCard) {
         await axios.put(
-          `http://31.97.206.144:9124/api/aboutcard/updatecard/${currentCardId}`,
+          `http://31.97.228.17:9124/api/aboutcard/updatecard/${currentCardId}`,
           data
         );
         Swal.fire("Updated", "Card updated", "success");
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/aboutcard/create-card",
+          "http://31.97.228.17:9124/api/aboutcard/create-card",
           data
         );
         Swal.fire("Created", "Card created", "success");
@@ -152,7 +152,7 @@ const AboutUs = ( {darkMode} ) => {
     if (!ok.isConfirmed) return;
 
     await axios.delete(
-      `http://31.97.206.144:9124/api/aboutcard/deletecard/${id}`
+      `http://31.97.228.17:9124/api/aboutcard/deletecard/${id}`
     );
     fetchCardData();
   };
@@ -210,7 +210,7 @@ const AboutUs = ( {darkMode} ) => {
 
           {existingAboutImage && (
             <img
-              src={`http://31.97.206.144:9124${existingAboutImage}`}
+              src={`http://31.97.228.17:9124${existingAboutImage}`}
               className="mt-4 w-48 rounded"
             />
           )}
@@ -301,7 +301,7 @@ const AboutUs = ( {darkMode} ) => {
                   <tr key={c._id} className={`${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"} "border-b"`}>
                     <td className="p-2">
                       <img
-                        src={`http://31.97.206.144:9124${c.image}`}
+                        src={`http://31.97.228.17:9124${c.image}`}
                         className="w-14 rounded"
                       />
                     </td>

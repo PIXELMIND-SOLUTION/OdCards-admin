@@ -14,7 +14,7 @@ const Scroller = ({ darkMode }) => {
   const fetchMarquees = async () => {
     try {
       const res = await axios.get(
-        "http://31.97.206.144:9124/api/marquees/getall"
+        "http://31.97.228.17:9124/api/marquees/getall"
       );
       setMarquees(res.data.marquees || []);
     } catch (err) {
@@ -37,13 +37,13 @@ const Scroller = ({ darkMode }) => {
     try {
       if (editId) {
         await axios.put(
-          `http://31.97.206.144:9124/api/marquees/update/${editId}`,
+          `http://31.97.228.17:9124/api/marquees/update/${editId}`,
           payload
         );
         Swal.fire("Updated", "Marquee updated successfully", "success");
       } else {
         await axios.post(
-          "http://31.97.206.144:9124/api/marquees/add",
+          "http://31.97.228.17:9124/api/marquees/add",
           payload
         );
         Swal.fire("Created", "Marquee added successfully", "success");
@@ -76,7 +76,7 @@ const Scroller = ({ darkMode }) => {
     if (!ok.isConfirmed) return;
 
     await axios.delete(
-      `http://31.97.206.144:9124/api/marquees/delete/${id}`
+      `http://31.97.228.17:9124/api/marquees/delete/${id}`
     );
     Swal.fire("Deleted", "Marquee removed", "success");
     fetchMarquees();

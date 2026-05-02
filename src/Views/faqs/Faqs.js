@@ -11,7 +11,7 @@ import {
   FaSun,
 } from "react-icons/fa";
 
-const API_URL = "http://31.97.206.144:9124/api/admin";
+const API_URL = "http://31.97.228.17:9124/api/admin";
 
 const Faqs = ( {darkMode} ) => {
 
@@ -127,7 +127,7 @@ const Faqs = ( {darkMode} ) => {
           }`}
         >
           <img
-            src={`http://31.97.206.144:9124${faqImage}`}
+            src={`http://31.97.228.17:9124${faqImage}`}
             alt="FAQ"
             className="w-40 rounded-lg"
           />
